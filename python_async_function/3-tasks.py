@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Not an Async to return asyncio.Task"""
 import asyncio
 wait_random = __import__('0-basic_async_syntax').wait_random
 
