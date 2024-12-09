@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
+"""Async Generator function"""
+
 import random
 import asyncio
 from typing import AsyncGenerator
-
-
-"""Async Generator function"""
 
 
 async def async_generator() -> AsyncGenerator[float, None]:
