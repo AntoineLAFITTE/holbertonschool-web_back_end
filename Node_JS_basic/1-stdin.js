@@ -1,13 +1,21 @@
-console.log("Welcome to Holberton School, what is your name?");
+// Set the encoding for the standard input to UTF-8
+process.stdin.setEncoding('utf8');
 
-process.stdin.on('data', (data) => {
-    const name = data.toString().trim();
-    console.log(`Your name is: ${name}`);
+// Prompt the user for their name
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-    // Cleanly end stdin listening after user input
-    process.stdin.end();
+// Listen for data input from the user
+process.stdin.on('readable', () => {
+  // Read the input from the user
+  const name = process.stdin.read();
+  if (name) {
+    // Display the user's name
+    process.stdout.write(`Your name is: ${name}`);
+  }
 });
 
+// Listen for the end of the input stream
 process.stdin.on('end', () => {
-    console.log("This important software is now closing");
+  // Inform the user that the software is closing
+  process.stdout.write('This important software is now closing\n');
 });
