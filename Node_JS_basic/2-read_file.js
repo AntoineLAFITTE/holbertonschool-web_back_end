@@ -2,6 +2,7 @@ const fs = require('fs');
 
 function countStudents(path) {
   try {
+    //Read file synchronously
     const data = fs.readFileSync(path, 'utf8');
 
     //filter lines
