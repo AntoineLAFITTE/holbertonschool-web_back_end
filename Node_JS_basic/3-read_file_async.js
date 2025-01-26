@@ -1,9 +1,9 @@
 const fs = require('fs');
 
-function countStudents(path) {
+ async function countStudents(path) {
   try {
-    // Read file synchronously
-    const data = fs.readFileASync(path, 'utf8');
+    // Read file asynchronously
+    const data = fs.readFileAsync(path, 'utf8');
 
     // Split data into lines and filter out empty ones
     const lines = data.split('\n').filter((line) => line.trim() !== '');
